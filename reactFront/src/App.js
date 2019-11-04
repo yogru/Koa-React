@@ -1,0 +1,15 @@
+import 'semantic-ui-css/semantic.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
+//import SelfIntroduceCard from './components/SelfIntroduceCard';
+import SelfIntroduceCardSaga from './containers/SelfIntroduceCardSaga';
+import hoBlock from './containers/hoBlock';
+function App() {
+  return (
+    <> 
+      <SelfIntroduceCardSaga/>
+    </>
+  );
+}
+
+export default App;
