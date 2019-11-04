@@ -3,19 +3,20 @@ import { faPhone ,faAt,faIgloo } from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
-import {textTo_pTag} from '../module/utils';
 import Font from './Font';
 import Card from './Card';
-
+import ResumeModal from './ResumeModal';
 const style = {
     "backgroundPosition": "center",
     "width": "500px",
 }
 
-const SelfIntroduceCard = ({
-    faceImgSrc='/image/face.png',
-    name,email,phone,gitHub,blog,desc="",
-})=>{
+const SelfIntroduceCard = (privacy)=>{
+  const {
+     name,email,phone,gitHub,blog,desc="",
+     faceImgSrc='/image/face.png'} = privacy;
+
+     
     const cardBodyMatch=[
           {icon: faPhone ,name:phone },
           {icon: faAt ,name:email,link:`mailto:${email}` }, 
@@ -24,7 +25,6 @@ const SelfIntroduceCard = ({
     ]
     const cardBody  = cardBodyMatch.map(inconMatcher);
     const Header= <Font size="20px" weight="bold">{name}</Font>;
-      desc = textTo_pTag(desc);
     return (
         <div style={style}>
            <Font size="70px">
@@ -33,10 +33,8 @@ const SelfIntroduceCard = ({
            <Jumbotron> 
             <Card imgSrc= {faceImgSrc}  headTag={Header} > 
                <Container>{cardBody}</Container>
-              {/*            
-              <Row>  
-                    modal 창 넣어야됨..
-              </Row> */}
+
+                 <ResumeModal privacy={privacy} buttonLabel="이력 상세 보기"/>
             </Card>
         
            <hr className="my-2" />
