@@ -10,11 +10,12 @@ const LoaderExampleInlineCentered = () =>
 
 const hoLoading=(Compo, LoadingCompo=LoaderExampleInlineCentered)=>{
     return (props)=>{
-        const {loading} = props
+        const {loading} = props;
+        console.log(loading);
          return (
               <>{
                 loading? <LoadingCompo/>:
-                    <Compo {...props}/>
+                        <Compo {...props}/>
                 }
               </>
          )

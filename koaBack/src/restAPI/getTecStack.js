@@ -53,9 +53,8 @@ const tecStack=[
 ]
 
 getTecStack.get('/',ctx=>{
-    ctx.body={
-        tecStack
-    }
+    ctx.body=tecStack;
+    
 })
 
 module.exports = getTecStack;

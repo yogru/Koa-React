@@ -2,7 +2,7 @@ import React from 'react';
 import { Media } from 'reactstrap';
 import Font from './Font';
 
-const Card = ({children, headTag, minWidth='32px', imgSrc, })=>{
+const MediaCard = ({children, headTag, minWidth='32px', imgSrc, })=>{
   // /image/face.png
    const style = {};
   headTag = headTag || <Font face="Hanna" size="20px" weight="bold"> HEAD </Font>;
@@ -21,4 +21,4 @@ const Card = ({children, headTag, minWidth='32px', imgSrc, })=>{
     );
 }
 
-export default Card;
+export default MediaCard;

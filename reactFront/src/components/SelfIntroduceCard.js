@@ -4,7 +4,7 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import Font from './Font';
-import Card from './Card';
+import MediaCard from './MediaCard';
 import ResumeModal from './ResumeModal';
 const style = {
     "backgroundPosition": "center",
@@ -31,11 +31,11 @@ const SelfIntroduceCard = (privacy)=>{
                신입> 프론트 엔드
            </Font>
            <Jumbotron> 
-            <Card imgSrc= {faceImgSrc}  headTag={Header} > 
+            <MediaCard imgSrc= {faceImgSrc}  headTag={Header} > 
                <Container>{cardBody}</Container>
 
                  <ResumeModal privacy={privacy} buttonLabel="이력 상세 보기"/>
-            </Card>
+            </MediaCard>
         
            <hr className="my-2" />
            <Font size="20px" face="Hanna" >

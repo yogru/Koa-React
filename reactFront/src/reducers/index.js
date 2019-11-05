@@ -1,23 +1,20 @@
 import mergeReducer from '../module/mergeReducer';
-import counter from './counter';
 import pendReducer from '../module/pendReducer';
 import { all } from 'redux-saga/effects'
-import * as counterSaga from './counterSaga';
-import * as loadPrivacy from './loadPrivacySaga';
-
+import loadPrivacy from './loadPrivacy';
+import loadTecStack from './loadTecStack';
 
 export const rootReducer=mergeReducer([
-    counter,
-    counterSaga.reducer,
+    pendReducer,
     loadPrivacy.reducer,
-    pendReducer
+    loadTecStack.reducer,
 ]);
 
 export function* rootSaga() {
     yield all(
         [ 
-            counterSaga.saga(),
             loadPrivacy.saga(),
+            loadTecStack.saga(),
         ]
     )
 }

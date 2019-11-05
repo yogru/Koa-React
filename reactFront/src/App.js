@@ -3,11 +3,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 //import SelfIntroduceCard from './components/SelfIntroduceCard';
 import SelfIntroduceCardSaga from './containers/SelfIntroduceCardSaga';
-import hoBlock from './containers/hoBlock';
+import TecstackListSaga from './containers/TecstackListSaga';
+
 function App() {
   return (
     <> 
       <SelfIntroduceCardSaga/>
+       <TecstackListSaga/>
     </>
   );
 }

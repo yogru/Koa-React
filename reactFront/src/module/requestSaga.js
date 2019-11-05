@@ -13,7 +13,7 @@ export const createRequestSaga = (type, req)=>{
    return function*(action){
           yield put(pending(type));
           // 일부러 딜레이
-         // yield delay(5000);
+       //  yield delay(5000);
         try{
             const response= yield call(req, action.payload);
             yield put({
