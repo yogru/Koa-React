@@ -36,7 +36,7 @@ const toyes=[
          tecList:[{ name:'React'},{name:`redux-saga`},{name:'ReactStrap'},{name:'Semantic-ui-react'}]
     },
     {
-     src:"/image/duckoo.jpg",
+     src:"/image/duckoo.JPG",
      name:"웹 모델링 툴",
      myRole:"화면 구현",
      github:"https://github.com/keple/repoteam",
