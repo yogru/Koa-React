@@ -26,6 +26,6 @@ app.use(async ctx=>{
        await send(ctx, 'index.html',{ root:buildDirectory });
     }
 });
-app.listen(4000, ()=>{
+app.listen( process.env.PORT || 4000, ()=>{
     logger.info("listen server...");
 })
