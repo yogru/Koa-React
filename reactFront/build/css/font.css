@@ -1,0 +1,25 @@
+ @font-face{
+  font-family: "nanum";
+  font-weight:200;
+  src:url("/font/NanumBarunGothic.woff") format("woff")
+} 
+
+@font-face {
+    font-family: 'Jeju';
+    font-style: normal;
+    font-weight: 400;
+    src:url("/font/JejuMyeongjo-Regular.ttf") format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Hanna';
+    font-style: normal;
+    font-weight: 400;
+    src:url("/font/BM-HANNA.ttf") format('truetype');
+}
+
+*{
+    font-family: 'nanum', serif;
+}
+

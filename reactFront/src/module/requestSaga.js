@@ -24,7 +24,7 @@ export const createRequestSaga = (type, req)=>{
         }catch(e){
             yield put({
                 type:failure,
-                payload: e,
+                payload:e,
                 error:true       
             });
         }finally{

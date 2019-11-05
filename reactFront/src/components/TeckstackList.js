@@ -4,10 +4,10 @@ import Font from './Font';
 import PopOver from './PopOver';
 import HoverCard from './HoverCard';
 
-const TeckstackList = ({tecStack})=>{
-console.log('tsss',tecStack);
-const list = tecStack.map(createTecCard);
-
+const TeckstackList = (props)=>{
+    const {tecStack} = props;
+    console.log(tecStack);
+const list =tecStack&&tecStack.map(createTecCard);
 return (
     <Container>
      <Row>
@@ -31,8 +31,9 @@ return (
     <Col key = {key}> 
        <HoverCard id= {id} src={src} />
       <PopOver target ={id}>
-          <Font size='20.5px' face="Jeju">{desc}</Font>
+          <Font size='17.5px' face="Jeju">{desc}</Font>
      </PopOver>
     </Col>
 )
 }
+

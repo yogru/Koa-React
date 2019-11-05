@@ -1,6 +1,7 @@
 import React from 'react';
 import { Loader } from 'semantic-ui-react'
 import Font from '../components/Font';
+import Error500 from '../components/Error500';
 
 const LoaderExampleInlineCentered = () =>
  (<Loader active inline='centered' >
@@ -10,14 +11,13 @@ const LoaderExampleInlineCentered = () =>
 
 const hoLoading=(Compo, LoadingCompo=LoaderExampleInlineCentered)=>{
     return (props)=>{
-        const {loading} = props;
-        console.log(loading);
+        const {loading ,success,failure} = props;
          return (
               <>{
                 loading? <LoadingCompo/>:
-                        <Compo {...props}/>
-                }
-              </>
+                  failure? <Error500 {...failure}/>:
+                             <Compo {...success}/>
+              }</>
          )
     }
 }

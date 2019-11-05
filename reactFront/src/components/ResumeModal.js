@@ -31,10 +31,7 @@ import ResumeTable from './ResumeTable';
      );
 
   }
-
-
   export default ResumeModal;
-
 
 const createBasicTdthArr = (personalDATA)=>{
     const {name , nation, birth,gender,tel,phone,email,accessRoot}
@@ -49,9 +46,9 @@ const createBasicTdthArr = (personalDATA)=>{
             {th:'이메일' , td:email }, 
             {th:'지원경로' , td:accessRoot}, 
         ]
-    }
-    const createSchoolTdthArr =(personalDATA)=>{
-       const { education , university ,subject,gpa ,admission ,graduation}
+ }
+const createSchoolTdthArr =(personalDATA)=>{
+ const { education , university ,subject,gpa ,admission ,graduation}
         = personalDATA ;
         return [
             {th:'학력' , td: education },
@@ -61,7 +58,7 @@ const createBasicTdthArr = (personalDATA)=>{
             {th:'입학년월', td:admission }, 
             {th:'졸업년월' , td:graduation }, 
         ]
-    }
+}
     const createHandcapTdthArr =(personalDATA)=>{
         return [{th:'장애 구분' , td:personalDATA.handcapPerson }];
     }
@@ -101,5 +98,5 @@ const createBasicTdthArr = (personalDATA)=>{
         const body= [ basic, school, army , bohun ,handcap];
     
         return body;
-    }
+}
     

@@ -23,8 +23,9 @@ function *saga(){
     yield takeLatest(eventName,requestSaga);
 }
 const initState= {
-    [onSuccessStateName]:{},
-    [eventName]:true
+    [eventName]:true,
+    [onSuccessStateName]:false,
+    [onFailureStateName]:false,
 }
 
 const reducer = partActionReducer({
