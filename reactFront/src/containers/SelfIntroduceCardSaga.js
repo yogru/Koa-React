@@ -12,5 +12,5 @@ const LoadSICsaga = hoLoadCompoent(SelfIntroduceCard ,loadPrivacy,
    return {...props , ...success};
 })
 
-export default hoBlock(LoadSICsaga);
+export default LoadSICsaga;
 

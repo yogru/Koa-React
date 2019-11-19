@@ -15,7 +15,6 @@ const SelfIntroduceCard = (privacy)=>{
   const {
      name,email,phone,gitHub,blog,desc="",
      faceImgSrc='/image/face.png'} = privacy;
-
      
     const cardBodyMatch=[
           {icon: faPhone ,name:phone },
@@ -27,20 +26,18 @@ const SelfIntroduceCard = (privacy)=>{
     const Header= <Font size="20px" weight="bold">{name}</Font>;
     return (
         <div style={style}>
-           <Font size="70px">
+           <Font size="65px">
                신입> 프론트 엔드
            </Font>
            <Jumbotron> 
             <MediaCard imgSrc= {faceImgSrc}  headTag={Header} > 
                <Container>{cardBody}</Container>
-
                  <ResumeModal privacy={privacy} buttonLabel="이력 상세 보기"/>
             </MediaCard>
-        
            <hr className="my-2" />
-           <Font size="20px" face="Hanna" >
-                   간략한 자기소개
-           </Font>
+             <Font size="20px" face="Hanna" >
+                      간략한 자기소개
+              </Font>
             <Font size="14px" face="Jeju" weight="bold">{desc}</Font>
            </Jumbotron>
         </div>
@@ -57,7 +54,7 @@ const inconMatcher =(obj,key)=>{
                 link? <a href= {link}  target="_blank" rel="noopener noreferrer" ><FontAwesomeIcon size='2x' icon={icon}/></a>:
                   <FontAwesomeIcon size='2x' icon={icon}/>
               }&nbsp;&nbsp;
-                  <Font face="Jeju" weight="bold" size='17px'>{name}</Font> 
+                  <Font face="Jeju" weight="bold" size='16px'>{name}</Font> 
              </Col>
            </Row>
          )

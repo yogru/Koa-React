@@ -20,6 +20,6 @@ const ToyListSaga = hoLoadCompoent(ToyList ,loadToyes,(props,success)=>{
        toyes:success
    }
 })
-export default hoBlock(ToyListSaga);
+export default ToyListSaga;
 
 

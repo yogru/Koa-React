@@ -31,6 +31,7 @@ import ResumeTable from './ResumeTable';
      );
 
   }
+
   export default ResumeModal;
 
 const createBasicTdthArr = (personalDATA)=>{

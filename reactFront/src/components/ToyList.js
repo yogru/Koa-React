@@ -1,40 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Item, Label } from 'semantic-ui-react';
 import ItemCard from './ItemCard';
 import Font from './Font';
+import Slide from './Slide';
+import Media from './Media';
 
 const ToyList = (props)=>{
     console.log(props)
      const { toyes } =  props;
      const toyList= toyes.map(createList);
+  
    return(
-  <div style={style}>
-    <Item.Group divided>
-     <Item>
-       <Item.Content>
-         <Font size="50px">TOY 프로젝트 소개</Font>
-       </Item.Content>
-     </Item>
+     <>
+      <Font size="50px">TOY 프로젝트 소개</Font>
+    <Slide navRight='37%' navBottom='-20px' >
       {toyList}
-     </Item.Group>   
-    </div>
+    </Slide>
+    </>
    )
 }
 export default ToyList;
-
-
-
-  const style = {
-    "backgroundPosition": "center",
-    "minWidth":"1280px",
-  }
-
   const fontHeaderProps={
       size:"30px", face:"Jeju"
   };
-
   const fontMeta={
     size:"25px", face:"Jeju"
   }
@@ -42,12 +33,11 @@ export default ToyList;
 const createToyHead= (toy)=>{
  return (
      <>
-      <Item.Header > 
             <Font {...fontHeaderProps} >{toy.name}</Font>
             <a href={toy.github}  target="_blank" rel="noopener noreferrer" >  
               <FontAwesomeIcon  size='2x' icon={faGithub} />
-            </a>
-      </Item.Header>
+            </a><br></br>
+            <Font {...fontMeta}>{toy.myRole}</Font>
      </>
  );
 }
@@ -62,16 +52,17 @@ const createTeces = (toy)=>{
 const createList= (toy,key)=>{
     const {src,desc} =toy;
     const header = createToyHead(toy);
-    const meta = <Font {...fontMeta}>{toy.myRole}</Font>
     const extra = createTeces(toy);
-    const props={header,src,header,meta,extra}
-
+    //const meta = <Font {...fontMeta}>{toy.myRole}</Font>
+    //const props={header,src,header,meta,extra}
+   const img = { src , alt:src , };
    return  (
-             <ItemCard key={key} {...props}>
-               <Font weight="bold" face="Jeju" size="18" >
+               <Media key={key} img={img} header={header}  >
+                  <Font weight="bold" face="Jeju" size="18px" >
                   {desc}
-               </Font>  
-            </ItemCard>
+                 </Font> 
+                 {extra} 
+               </Media>
           );
 }
 

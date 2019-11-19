@@ -15,8 +15,8 @@ export const finish= createAction(
     pass
 )
 const requestStateReducer = partActionReducer({
-    [PENDING]:(draft , action)=>{ draft[action.payload]=true},
-    [FINISH]:(draft , action)=>{ draft[action.payload]=false}
+     [PENDING]:(draft , action)=>{ draft[action.payload]=true},
+     [FINISH]:(draft , action)=>{ draft[action.payload]=false}
   },{});
 
-  export default requestStateReducer;
+export default requestStateReducer;
