@@ -3,7 +3,7 @@ import { faPhone ,faAt,faIgloo } from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
-import Font from './Font';
+import { FONT,PRE } from './MyStyledTages';
 import MediaCard from './MediaCard';
 import ResumeModal from './ResumeModal';
 const style = {
@@ -23,22 +23,26 @@ const SelfIntroduceCard = (privacy)=>{
           {icon: faIgloo ,name:"블로그", link:blog },
     ]
     const cardBody  = cardBodyMatch.map(inconMatcher);
-    const Header= <Font size="20px" weight="bold">{name}</Font>;
+    const Header= <FONT size="20px" weight="bold">{name}</FONT>;
     return (
         <div style={style}>
-           <Font size="65px">
+           <FONT size="65px">
                신입> 프론트 엔드
-           </Font>
+           </FONT>
            <Jumbotron> 
             <MediaCard imgSrc= {faceImgSrc}  headTag={Header} > 
                <Container>{cardBody}</Container>
                  <ResumeModal privacy={privacy} buttonLabel="이력 상세 보기"/>
             </MediaCard>
            <hr className="my-2" />
-             <Font size="20px" face="Hanna" >
+             <FONT size="20px" face="Hanna" >
                       간략한 자기소개
-              </Font>
-            <Font size="14px" face="Jeju" weight="bold">{desc}</Font>
+              </FONT>
+            <FONT size="14px" face="Jeju" weight="bold">
+               <PRE>
+                 {desc}
+              </PRE>
+            </FONT>
            </Jumbotron>
         </div>
     );
@@ -54,7 +58,7 @@ const inconMatcher =(obj,key)=>{
                 link? <a href= {link}  target="_blank" rel="noopener noreferrer" ><FontAwesomeIcon size='2x' icon={icon}/></a>:
                   <FontAwesomeIcon size='2x' icon={icon}/>
               }&nbsp;&nbsp;
-                  <Font face="Jeju" weight="bold" size='16px'>{name}</Font> 
+                  <FONT face="Jeju" weight="bold" size='16px'>{name}</FONT> 
              </Col>
            </Row>
          )

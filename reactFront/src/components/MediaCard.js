@@ -1,11 +1,11 @@
 import React from 'react';
 import { Media } from 'reactstrap';
-import Font from './Font';
+import {FONT } from './MyStyledTages';
 
 const MediaCard = ({children, headTag, minWidth='32px', imgSrc, })=>{
   // /image/face.png
    const style = {};
-  headTag = headTag || <Font face="Hanna" size="20px" weight="bold"> HEAD </Font>;
+  headTag = headTag || <FONT face="Hanna" size="20px" weight="bold"> HEAD </FONT>;
   style.minWidth= minWidth;
      return (
    <Media>

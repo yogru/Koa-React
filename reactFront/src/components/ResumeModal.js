@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader,
   ModalBody, ModalFooter } from 'reactstrap';
-import Font from './Font';
+import { FONT } from './MyStyledTages';
 import ResumeTable from './ResumeTable';
-
-
   const ResumeModal = ({buttonLabel ,privacy, className})=>{
    const [modal, setModal] = useState(false);
    const toggle = () => setModal(!modal);
 
    const resumeBody= createResumeBody(privacy).map((props,key)=>{
-           return   <ResumeTable key={key} {...props}/>;
+           return   <ResumeTable key={key}{...props}/>;
     })
      return(
      <>
@@ -18,7 +16,7 @@ import ResumeTable from './ResumeTable';
       
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>
-             <Font face='Jeju' weight ='bold' size ='20px' >지원분야: 신입>프론트 엔드 </Font>
+             <FONT face='Jeju' weight ='bold' size ='20px' >지원분야: 신입>프론트 엔드 </FONT>
         </ModalHeader>
         <ModalBody>
              {resumeBody}
@@ -53,8 +51,8 @@ const createSchoolTdthArr =(personalDATA)=>{
         = personalDATA ;
         return [
             {th:'학력' , td: education },
-            {th:'학교', td:university },
-            {th:'전공' , td:subject }, 
+            {th:'학교', td: university },
+            {th:'전공' , td: subject }, 
             {th:'학점' , td: gpa}, 
             {th:'입학년월', td:admission }, 
             {th:'졸업년월' , td:graduation }, 
@@ -77,23 +75,23 @@ const createSchoolTdthArr =(personalDATA)=>{
     
     const createResumeBody =(privacy)=>{
         const basic={
-            header: <Font size='20px'>기본 인적 사항</Font>,
+            header: <FONT size='20px'>기본 인적 사항</FONT>,
             pairOfthtdArr: createBasicTdthArr(privacy)
         }
         const bohun ={
-            header: <Font size='20px'>보훈 사항</Font>,
+            header: <FONT size='20px'>보훈 사항</FONT>,
             pairOfthtdArr: createBohunTdthArr(privacy)
         }
        const army= {
-          header: <Font size='20px'>병역 사항</Font>,
+          header: <FONT size='20px'>병역 사항</FONT>,
           pairOfthtdArr: createArmyDutyTdthArr(privacy)
        }
        const handcap= {
-          header: <Font size='20px'>장애 사항</Font>,
+          header: <FONT size='20px'>장애 사항</FONT>,
           pairOfthtdArr: createHandcapTdthArr(privacy)
        } 
        const school = {
-          header: <Font size='20px'>학력 사항</Font>,
+          header: <FONT size='20px'>학력 사항</FONT>,
           pairOfthtdArr: createSchoolTdthArr(privacy)
        }
         const body= [ basic, school, army , bohun ,handcap];

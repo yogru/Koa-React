@@ -1,12 +1,12 @@
 import React from 'react';
 import { Loader } from 'semantic-ui-react'
-import Font from '../components/Font';
+import { FONT } from '../components/MyStyledTages'
 import Error500 from '../components/Error500';
+
 
 const LoaderExampleInlineCentered = () =>
  (<Loader active inline='centered' >
-     <Font face="Jeju" weight="bold" size="15px">Loading</Font></Loader>)
-
+     <FONT face="Jeju" weight="bold" size="15px">Loading</FONT></Loader>)
 // 
 
 const hoLoading=(Compo, LoadingCompo=LoaderExampleInlineCentered)=>{

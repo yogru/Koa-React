@@ -10,10 +10,15 @@ const ResumeTable =({header , pairOfthtdArr })=>{
     )
  })
     return (
+        <>
+            {header}
          <Table>
-          <thead>{header}</thead>
-          <tbody>{trs}</tbody>  
+            {/* <thead>{header}</thead> */}
+           <tbody>
+               {trs}
+          </tbody>
         </Table>
+        </>
     )
 }
 export default ResumeTable;

@@ -6,10 +6,7 @@ import hoLoading from './hoLoading';
 // 지금 애매하게 결합된 상태.
 
 const bindbasic =(props,success)=>{
-     return {
-         ...success,
-         ...props
-     }
+     return success;
 }
  const hoLoadCompoent= (Compo,{
   eventName,onFailureStateName ,loadAction,onSuccessStateName 

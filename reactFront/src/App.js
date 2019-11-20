@@ -5,6 +5,9 @@ import SelfIntroduceCardSaga from './containers/SelfIntroduceCardSaga';
 import TecstackListSaga from './containers/TecstackListSaga';
 import ToyListSaga from './containers/ToyListSaga';
 import {Grid, GridItem} from './components/Grid';
+import { FONT } from './components/MyStyledTages';
+
+console.log(FONT, 'fooooooooooont.')
 
 function App() {
   return (
